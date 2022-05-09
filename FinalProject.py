@@ -72,6 +72,7 @@ def authority_counter(authorities, df):
 
 # Builds Pie Chart Based on Local Authorities and the Frequency
 def pie_chart(amount, chosen_authorities):
+    plt.figure()
     plt.pie(amount, labels=chosen_authorities, autopct='%.2f', shadow=True)
     plt.title(f"Pub Frequency {', '.join(chosen_authorities)}")
     return plt
@@ -85,6 +86,7 @@ def count_names(data, numPubs):
 
 # Build Bar Chart Based on Selected Number of Pubs and their Frequency
 def pubs_bar_chart(pubs, num, cord):
+    plt.figure()
     plt.bar(cord, num, color=['blue', 'orange', 'yellow'])
     plt.xticks(cord, pubs, rotation=90)
     for i in range(len(cord)):
@@ -106,6 +108,7 @@ def count_postcodes(code, df):
 
 # Build Bar Chart with Post Code and Number
 def code_bar_chart(code, count):
+    plt.figure()
     plt.bar(code, count, width=0.8, color=['red'])
     plt.xlabel("Post Code")
     plt.ylabel("Number")
